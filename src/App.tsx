@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import {Navigate, Route, Routes} from "react-router-dom";
+
 import './App.css';
+import Footer from "./banca/layouts/Footer/Footer";
+import Navbar from "./banca/layouts/Navbar/Navbar";
+import routes from "./routes";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+
+    constructor(props: any) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <Navbar />
+
+                <Routes>
+
+                    { this.getRoutes(routes) }
+
+                    <Route path="*" element={<Navigate to="/home" />} />
+
+                </Routes>
+
+                <Footer />
+            </div>
+        );
+    }
+
+    public getRoutes = (allRoutes: any) =>
+        allRoutes.map((route: any) => {
+            if (route.collapse) {
+                return this.getRoutes(route.collapse);
+            }
+
+            if (route.route) {
+                return <Route path={route.route} element={route.component} key={route.key} />;
+            }
+
+            return null;
+        });
+
+
 }
-
-export default App;
