@@ -5,6 +5,10 @@ export function obtenerUltimaJugada() {
     return axios.get('http://localhost:8090/cincoDeOro/obtenerUltimaJugada');
 }
 
+export function obtenerUltimasJugadas(page: number, size: number) {
+    return axios.get('http://localhost:8090/cincoDeOro/obtenerUltimasJugadas?page=' + page + '&size=' + size);
+}
+
 export function obtenerJugadasConCoincidencias(numeroDeCoincidencias: number) {
     return axios.get('http://localhost:8090/cincoDeOro/obtenerJugadasCincoDeOroConMayorNumeroDeCoincidencias?numeroDeCoincidencias=' + numeroDeCoincidencias);
 }

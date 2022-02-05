@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { obtenerUltimaJugada, obtenerJugadasConCoincidencias } from "../../services/cincoDeOroService";
+import { obtenerJugadasConCoincidencias } from "../../services/cincoDeOroService";
 import CincoDeOroModel from "../../models/cincoDeOro";
-import moment from "moment";
 import 'moment/locale/es';
 import JugadaAnteriorConCoincidenciasComponent from "./JugadaAnteriorConCoincidencias";
 
@@ -55,17 +54,21 @@ export default class JugadasAnterioresConCoincidenciasComponent extends Componen
     render() {
 
         return (
-                <div className="row pt-3">
-                    <div>
+                <div className="row pt-5">
+                    <div className="text-start">
                         <h2>Jugadas anteriores con coincidencias</h2>
                         <p>Aqui puede ver las jugadas anteriores, que tienen un numero de coincidencias con la ultima jugada.</p>
-
-                        <div className="col-lg-12 d-flex mt-2 text-left">
-                            <h5 className="text-start"> { /*this.convertirFecha(this.state.cincoDeOro.fechaTirada)*/ } </h5>
-                        </div>
                     </div>
                     <div className="row col-lg-12">
                         <div className="col-lg-6">
+                            <h5 className="text-start pt-3">Ultima jugada</h5>
+                            <div className="col-lg-12 d-flex pt-3">
+                                { this.props.cincoDeOro?.cincoDeOro?.map((item, index) => (
+                                    <div key={ "cincoDeOro" + index } className="bolilla bolilla-coincidencia">
+                                        <h3>{item}</h3>
+                                    </div>
+                                ))}
+                            </div>
                             {
                                 this.state.jugadasAnterioresConCoincidenciasKeys?.map((key) =>
                                    (
