@@ -50,11 +50,13 @@ export default class MostrarJugadaComponent extends Component<MyProps, MyState> 
                             </h6>
                         </div>
                         <div className="col-lg-12 d-flex">
-                            { this.props.cincoDeOro?.rebancha?.map((item, index) => (
+                            {
+                                this.props.cincoDeOro?.rebancha?.map((item, index) => (
                                 <div key={ "revancha" + index } className={index < 5 ? "bolilla" : "bolilla-extra"}>
                                     <h3>{ item }</h3>
                                 </div>
-                            ))}
+                            ))
+                            }
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import moment from "moment";
+import CincoDeOroModel from "../models/cincoDeOro";
 
 export function obtenerUltimaJugada() {
     return axios.get('http://localhost:8090/cincoDeOro/obtenerUltimaJugada');
@@ -8,6 +9,15 @@ export function obtenerUltimaJugada() {
 export function obtenerUltimasJugadas(page: number, size: number) {
     return axios.get('http://localhost:8090/cincoDeOro/obtenerUltimasJugadas?page=' + page + '&size=' + size);
 }
+
+export function obtenerJugadasAnteriores(cincoDeOro: CincoDeOroModel, page: number, size: number) {
+    return axios.post('http://localhost:8090/cincoDeOro/obtenerJugadasAnteriores?page=' + page + '&size=' + size, cincoDeOro);
+}
+
+export function obtenerJugadasPosteriores(cincoDeOro: CincoDeOroModel, page: number, size: number) {
+    return axios.post('http://localhost:8090/cincoDeOro/obtenerJugadasPosteriores?page=' + page + '&size=' + size, cincoDeOro);
+}
+
 
 export function obtenerJugadasConCoincidencias(numeroDeCoincidencias: number) {
     return axios.get('http://localhost:8090/cincoDeOro/obtenerJugadasCincoDeOroConMayorNumeroDeCoincidencias?numeroDeCoincidencias=' + numeroDeCoincidencias);

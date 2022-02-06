@@ -2220,6 +2220,17 @@ responsive
   margin-right: 10px;
 }
 
+.bolilla-jugadas-anteriores {
+  height: 40px;
+  width: 40px;
+  background: #f7de69;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-right: 10px;
+}
+
 .bolilla-coincidencia{
   background: #94f769 !important;
 }
@@ -2251,3 +2262,6 @@ responsive
   margin-left: 10px;
 }
 
+.z-index-1050{
+  z-index: 1050 !important;
+}

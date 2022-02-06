@@ -25,7 +25,7 @@ function Navbar() {
         </div>
       </div>
 
-      <header className="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+      <header className="header-area header-sticky wow slideInDown z-index-1050" data-wow-duration="0.75s" data-wow-delay="0s">
         <div className="container">
           <div className="row">
             <div className="col-12">

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { obtenerUltimaJugada, obtenerJugadasConCoincidencias, convertirFecha } from "../../services/cincoDeOroService";
 import CincoDeOroModel from "../../models/cincoDeOro";
-import moment from "moment";
 import 'moment/locale/es';
 import JugadasAnterioresConCoincidenciasComponent from "./JugadasAnterioresConCoincidencias";
 import JugadasAnterioresComponent from "./JugadasAnteriores";
@@ -12,7 +11,6 @@ type MyState = {
     ultimaJugada: [],
     cincoDeOro: CincoDeOroModel
 };
-
 export default class CincoDeOroComponent extends Component<MyProps, MyState> {
 
     constructor(props: any) {
@@ -79,7 +77,8 @@ export default class CincoDeOroComponent extends Component<MyProps, MyState> {
                                                     </div>
                                                 </div>
 
-                                                <MostrarJugadaComponent cincoDeOro = { this.state.cincoDeOro } mostrarFecha = { false } />
+                                                <MostrarJugadaComponent cincoDeOro = { this.state.cincoDeOro } mostrarFecha = { false }/>
+
 
                                             </div>
                                         </div>
