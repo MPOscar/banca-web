@@ -120,7 +120,6 @@ export default class JugadasAnterioresConCoincidenciasComponent extends Componen
                             }
                     </div>
                 </div>
-
         );
     }
 }

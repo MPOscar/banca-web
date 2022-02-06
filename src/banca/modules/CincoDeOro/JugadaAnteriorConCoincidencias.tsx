@@ -60,10 +60,10 @@ export default class JugadaAnteriorConCoincidenciasComponent extends Component<M
     render() {
 
         return (
-            <div className="row col-lg-12 mt-4">
+            <div className="row col-lg-12 mt-4 p-3 jugadas-coincidencias-background">
                 {
                     this.state.jugadasAnteriores?.map((cincoDeOro, posicion) => (
-                        <div className="col-lg-3 mt-4">
+                        <div className="col-lg-3">
                             <h6 className="text-start pt-3"> { convertirFecha(cincoDeOro.fechaTirada) } </h6>
                             <div className="d-flex justify-content-between pt-1">
                                 <h6 className="text-start">Pozo de Oro</h6>

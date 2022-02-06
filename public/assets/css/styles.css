@@ -2265,3 +2265,7 @@ responsive
 .z-index-1050{
   z-index: 1050 !important;
 }
+
+.jugadas-coincidencias-background {
+  background: #e7f4e27d;
+}
