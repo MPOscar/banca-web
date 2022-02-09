@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
-import { obtenerUltimaJugada, obtenerJugadasConCoincidencias, convertirFecha } from "../../services/cincoDeOroService";
-import CincoDeOroModel from "../../models/cincoDeOro";
+import { obtenerUltimaJugada, obtenerJugadasConCoincidencias, convertirFecha } from "../Services/TombolaService";
 import 'moment/locale/es';
-import JugadasAnterioresConCoincidenciasComponent from "./JugadasAnterioresConCoincidencias";
-import JugadasAnterioresComponent from "./JugadasAnteriores";
-import MostrarJugadaComponent from "./MostrarJugada";
+import MostrarJugadaTombolaComponent from "../MostrarJugadaTombolaComponent";
+import TombolaModel from "../Models/TombolaModel";
 
 type MyProps = { };
 type MyState = {
     ultimaJugada: [],
-    cincoDeOro: CincoDeOroModel
+    tombola: TombolaModel
 };
-export default class CincoDeOroComponent extends Component<MyProps, MyState> {
+export default class TombolaComponent extends Component<MyProps, MyState> {
 
     constructor(props: any) {
         super(props);
-       // moment().locale('es');
         this.state = {
             ultimaJugada: [],
-            cincoDeOro: new CincoDeOroModel()
+            tombola: new TombolaModel()
         };
     }
 
@@ -30,8 +27,9 @@ export default class CincoDeOroComponent extends Component<MyProps, MyState> {
         obtenerUltimaJugada()
             .then((response) => {
                 this.setState({
-                    cincoDeOro: response.data.data,
+                    tombola: response.data.data,
                 });
+                console.log(response.data.data);
             })
             .catch((err) => {
                 console.log(err)
@@ -42,17 +40,12 @@ export default class CincoDeOroComponent extends Component<MyProps, MyState> {
         obtenerJugadasConCoincidencias(3)
             .then((response) => {
                 this.setState({
-                    cincoDeOro: response.data.data,
+                    tombola: response.data.data,
                 });
             })
             .catch((err) => {
                 console.log(err)
             });
-    }
-
-    pruebaFuncion(){
-        const { ultimaJugada } = this.state;
-        console.log(ultimaJugada);
     }
 
     render() {
@@ -70,15 +63,14 @@ export default class CincoDeOroComponent extends Component<MyProps, MyState> {
                                             <div className="row">
                                                 <div className="col-lg-12">
                                                     <div>
-                                                        <h3 className="text-start">Resultados de los Sorteos</h3>
+                                                        { this.state.tombola.esDiurno ? <h3 className="text-start">Sorteo Vespertino</h3> : <h3 className="text-start">Sorteo Nocturno</h3>}
                                                     </div>
                                                     <div className="col-lg-12 d-flex mt-2">
-                                                        <h5> { convertirFecha(this.state.cincoDeOro.fechaTirada) } </h5>
+                                                        <h5> { convertirFecha(this.state.tombola.fechaTirada) } </h5>
                                                     </div>
                                                 </div>
 
-                                                <MostrarJugadaComponent cincoDeOro = { this.state.cincoDeOro } mostrarFecha = { false }/>
-
+                                                <MostrarJugadaTombolaComponent tombola = { this.state.tombola } mostrarFecha = { false }/>
 
                                             </div>
                                         </div>
@@ -89,10 +81,6 @@ export default class CincoDeOroComponent extends Component<MyProps, MyState> {
                                         </div>
                                     </div>
                                 </div>
-
-                                <JugadasAnterioresComponent jugadaActual = { this.state.cincoDeOro } />
-
-                                <JugadasAnterioresConCoincidenciasComponent cincoDeOro = { this.state.cincoDeOro } />
 
                             </div>
                         </div>

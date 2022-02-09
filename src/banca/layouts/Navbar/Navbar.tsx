@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function Navbar() {
   return (
@@ -15,10 +16,11 @@ function Navbar() {
             </div>
             <div className="col-lg-4 col-sm-4 col-5">
               <ul className="social-media">
-                <li><a href="#"><i className="fa fa-facebook"></i></a></li>
+                { /*<li><a href="#"><i className="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i className="fa fa-behance"></i></a></li>
                 <li><a href="#"><i className="fa fa-twitter"></i></a></li>
                 <li><a href="#"><i className="fa fa-dribbble"></i></a></li>
+                */}
               </ul>
             </div>
           </div>
@@ -36,15 +38,18 @@ function Navbar() {
                 </a>
 
                 <ul className="nav">
-                  <li className="scroll-to-section"><a href="#top" className="active">Home</a></li>
-                  <li className="scroll-to-section"><a href="#about">About</a></li>
-                  <li className="scroll-to-section"><a href="#services">Services</a></li>
-                  <li className="scroll-to-section"><a href="#portfolio">Projects</a></li>
-                  <li className="scroll-to-section"><a href="#blog">Blog</a></li>
-                  <li className="scroll-to-section"><a href="#contact">Contact</a></li>
-                  <li className="scroll-to-section">
-                    <div className="border-first-button"><a href="#contact">Free Quote</a></div>
-                  </li>
+                  <li className="scroll-to-section"><Link to="/buscarJugadas" className="active">Buscar Jugadas</Link></li>
+                  {
+                    /*<li className="scroll-to-section"><a href="#about">About</a></li>
+                    <li className="scroll-to-section"><a href="#Services">Services</a></li>
+                    <li className="scroll-to-section"><a href="#portfolio">Projects</a></li>
+                    <li className="scroll-to-section"><a href="#blog">Blog</a></li>
+                    <li className="scroll-to-section"><a href="#contact">Contact</a></li>
+                    <li className="scroll-to-section">
+                      <div className="border-first-button"><a href="#contact">Free Quote</a></div>
+                    </li>
+                    */
+                  }
                 </ul>
                 <a className='menu-trigger'>
                   <span>Menu</span>

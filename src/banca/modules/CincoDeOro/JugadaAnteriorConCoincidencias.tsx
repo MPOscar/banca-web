@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import CincoDeOroModel from "../../models/cincoDeOro";
+import CincoDeOroModel from "./Models/CincoDeOroModel";
 import 'moment/locale/es';
-import cincoDeOro from "../../models/cincoDeOro";
-import { convertirFecha, obtenerJugadasAnteriores, obtenerJugadasPosteriores } from "../../services/cincoDeOroService";
+import { convertirFecha, obtenerJugadasAnteriores, obtenerJugadasPosteriores } from "./Services/CincoDeOroService";
 
 
 type MyProps = {

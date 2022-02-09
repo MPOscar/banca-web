@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import {
-    obtenerUltimaJugada,
-    obtenerJugadasConCoincidencias,
-    obtenerUltimasJugadas
-} from "../../services/cincoDeOroService";
-import CincoDeOroModel from "../../models/cincoDeOro";
-import moment from "moment";
+import { obtenerUltimasJugadas } from "./Services/CincoDeOroService";
+import CincoDeOroModel from "./Models/CincoDeOroModel";
 import 'moment/locale/es';
-import JugadaAnteriorConCoincidenciasComponent from "./JugadaAnteriorConCoincidencias";
 import MostrarJugadaComponent from "./MostrarJugada";
 
 type MyProps = {

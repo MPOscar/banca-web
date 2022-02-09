@@ -21,7 +21,7 @@ export default class App extends Component {
 
                     { this.getRoutes(routes) }
 
-                    <Route path="*" element={<Navigate to="/home" />} />
+                    <Route path="*" element={<Navigate to="/cincoDeOro" />} />
 
                 </Routes>
 

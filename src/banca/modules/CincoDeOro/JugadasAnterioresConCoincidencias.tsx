@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {convertirFecha, obtenerJugadasConCoincidencias, obtenerUltimasJugadas} from "../../services/cincoDeOroService";
-import CincoDeOroModel from "../../models/cincoDeOro";
+import {convertirFecha, obtenerJugadasConCoincidencias, obtenerUltimasJugadas} from "./Services/CincoDeOroService";
+import CincoDeOroModel from "./Models/CincoDeOroModel";
 import 'moment/locale/es';
 import JugadaAnteriorConCoincidenciasComponent from "./JugadaAnteriorConCoincidencias";
 
@@ -97,7 +97,8 @@ export default class JugadasAnterioresConCoincidenciasComponent extends Componen
                                                 <div key={ "cincoDeOro" + index } className={indexCincoDeOro == 0 ? "bolilla-jugadas-anteriores bolilla-coincidencia" : "bolilla-jugadas-anteriores"}>
                                                     <h5>{item}</h5>
                                                 </div>
-                                            ))}
+                                            ))
+                                        }
                                     </div>
                                 </div>
                             ))

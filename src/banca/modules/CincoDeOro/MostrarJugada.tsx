@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CincoDeOroModel from "../../models/cincoDeOro";
+import CincoDeOroModel from "./Models/CincoDeOroModel";
 import 'moment/locale/es';
-import {convertirFecha} from "../../services/cincoDeOroService";
+import { convertirFecha } from "./Services/CincoDeOroService";
 
 type MyProps = {
     cincoDeOro: CincoDeOroModel,
