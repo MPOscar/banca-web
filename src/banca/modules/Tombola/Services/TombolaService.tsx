@@ -19,8 +19,10 @@ export function obtenerJugadasPosteriores(cincoDeOro: CincoDeOroModel, page: num
 }
 
 export function obtenerJugadasConCoincidencias(numeroDeCoincidencias: number) {
-    return axios.get('http://localhost:8090/cincoDeOro/obtenerJugadasCincoDeOroConMayorNumeroDeCoincidencias?numeroDeCoincidencias=' + numeroDeCoincidencias);
+    return axios.get('http://localhost:8090/tombola/obtenerJugadasTombolaConMayorNumeroDeCoincidencias?numeroDeCoincidencias=' + numeroDeCoincidencias);
 }
+
+export const numbers = [5,10,15,20];
 
 export function convertirFecha(fecha: any){
     let fechaFormateada = "";

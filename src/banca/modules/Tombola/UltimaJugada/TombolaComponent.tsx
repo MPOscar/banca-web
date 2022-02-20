@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { obtenerUltimaJugada, obtenerJugadasConCoincidencias, convertirFecha } from "../Services/TombolaService";
 import 'moment/locale/es';
-import MostrarJugadaTombolaComponent from "../MostrarJugadaTombolaComponent";
+import TombolaMostrarJugadaComponent from "../TombolaMostrarJugadaComponent";
 import TombolaModel from "../Models/TombolaModel";
+import JugadasAnterioresComponent from "../../CincoDeOro/JugadasAnteriores";
+import TombolaJugadasAnterioresComponent from "../JugadasAnterioresTombola";
+import JugadasAnterioresConCoincidenciasComponent from "../../CincoDeOro/JugadasAnterioresConCoincidencias";
+import TombolaJugadasAnterioresConCoincidenciasComponent from "../TombolaJugadasAnterioresConCoincidencias";
 
 type MyProps = { };
 type MyState = {
@@ -70,7 +74,7 @@ export default class TombolaComponent extends Component<MyProps, MyState> {
                                                     </div>
                                                 </div>
 
-                                                <MostrarJugadaTombolaComponent tombola = { this.state.tombola } mostrarFecha = { false }/>
+                                                <TombolaMostrarJugadaComponent tombola = { this.state.tombola } mostrarFecha = { false }/>
 
                                             </div>
                                         </div>
@@ -80,6 +84,11 @@ export default class TombolaComponent extends Component<MyProps, MyState> {
                                             <img src="assets/images/slider-dec.png" alt=""/>
                                         </div>
                                     </div>
+
+                                    <TombolaJugadasAnterioresComponent jugadaActual = { this.state.tombola } />
+
+                                    <TombolaJugadasAnterioresConCoincidenciasComponent tombola = { this.state.tombola } />
+
                                 </div>
 
                             </div>
