@@ -2,24 +2,27 @@ import axios from "axios";
 import moment from "moment";
 import CincoDeOroModel from "../../CincoDeOro/Models/CincoDeOroModel";
 
+import data from "../../../../env.json";
+
 export function obtenerUltimaJugada() {
-    return axios.get('http://localhost:8090/tombola/obtenerUltimaJugada');
+    console.log(data);
+    return axios.get(data.apiUrl + '/tombola/obtenerUltimaJugada');
 }
 
 export function obtenerUltimasJugadas(page: number, size: number) {
-    return axios.get('http://localhost:8090/tombola/obtenerUltimasJugadas?page=' + page + '&size=' + size);
+    return axios.get(data.apiUrl + '/tombola/obtenerUltimasJugadas?page=' + page + '&size=' + size);
 }
 
 export function obtenerJugadasAnteriores(cincoDeOro: CincoDeOroModel, page: number, size: number) {
-    return axios.post('http://localhost:8090/tombola/obtenerJugadasAnteriores?page=' + page + '&size=' + size, cincoDeOro);
+    return axios.post(data.apiUrl + '/tombola/obtenerJugadasAnteriores?page=' + page + '&size=' + size, cincoDeOro);
 }
 
 export function obtenerJugadasPosteriores(cincoDeOro: CincoDeOroModel, page: number, size: number) {
-    return axios.post('http://localhost:8090/tombola/obtenerJugadasPosteriores?page=' + page + '&size=' + size, cincoDeOro);
+    return axios.post(data.apiUrl + '/tombola/obtenerJugadasPosteriores?page=' + page + '&size=' + size, cincoDeOro);
 }
 
 export function obtenerJugadasConCoincidencias(numeroDeCoincidencias: number) {
-    return axios.get('http://localhost:8090/tombola/obtenerJugadasTombolaConMayorNumeroDeCoincidencias?numeroDeCoincidencias=' + numeroDeCoincidencias);
+    return axios.get(data.apiUrl + '/tombola/obtenerJugadasTombolaConMayorNumeroDeCoincidencias?numeroDeCoincidencias=' + numeroDeCoincidencias);
 }
 
 export const numbers = [5,10,15,20];

@@ -85,8 +85,6 @@ export default class TombolaComponent extends Component<MyProps, MyState> {
                                         </div>
                                     </div>
 
-                                    <TombolaJugadasAnterioresComponent jugadaActual = { this.state.tombola } />
-
                                     <TombolaJugadasAnterioresConCoincidenciasComponent tombola = { this.state.tombola } />
 
                                 </div>

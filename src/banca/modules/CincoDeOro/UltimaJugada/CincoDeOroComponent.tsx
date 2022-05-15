@@ -88,8 +88,6 @@ export default class CincoDeOroComponent extends Component<MyProps, MyState> {
                                     </div>
                                 </div>
 
-                                <JugadasAnterioresComponent jugadaActual = { this.state.cincoDeOro } />
-
                                 <JugadasAnterioresConCoincidenciasComponent cincoDeOro = { this.state.cincoDeOro } />
 
                             </div>

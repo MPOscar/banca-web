@@ -38,7 +38,7 @@ function Navbar() {
                 </a>
 
                 <ul className="nav">
-                  <li className="scroll-to-section"><Link to="/buscarJugadas" className="active">Buscar Jugadas</Link></li>
+                  <li className="scroll-to-section"><Link to="/tombola" className="active">Tombola</Link></li>
                   {
                     /*<li className="scroll-to-section"><a href="#about">About</a></li>
                     <li className="scroll-to-section"><a href="#Services">Services</a></li>
